@@ -1,10 +1,11 @@
 import { addToList } from "./addToList.js";
-import { removeTask } from "./taskButtons.js";
 
 const nameInput = document.getElementById("nameInput");
 const userNameSection = document.getElementById("userNameSection");
 const toDoListSection = document.getElementById("toDoListSection");
 const ownersName = document.getElementById("ownersName");
+
+hasUsername();
 
 document.getElementById("creatToDoList").addEventListener("click", (ev) => {
   ev.preventDefault();
@@ -17,14 +18,17 @@ document.getElementById("creatToDoList").addEventListener("click", (ev) => {
 
 function hasUsername() {
   const username = localStorage.getItem("username");
-  if (username !== "") {
+  if (!username) {
     userNameSection.classList.remove("disabled");
-    toDoListSection.classList.remove("disabled");
-    ownersName.innerText = `${username}'s To-Do List`;
+    toDoListSection.classList.add("disabled");
     return;
   }
-  userNameSection.classList.remove("disabled");
-  toDoListSection.classList.remove("disabled");
+  if (username !== "") {
+    userNameSection.classList.add("disabled");
+    toDoListSection.classList.remove("disabled");
+    ownersName.innerText = `${username}'s TO-DO LIST`;
+    return;
+  }
 }
 
 document.getElementById("addToListBtn").addEventListener("click", addToList);

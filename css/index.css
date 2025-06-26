@@ -1,12 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat";
 }
 
 :root {
-  --primary-background-color: black;
-  --primary-color: white;
+  --primary-background-color: #003153;
+  --secondary-background-color: #012d4d;
+  --font-color: #fbf5f3;
+  --primary-color: #fbff12;
 }
 
 main {
@@ -15,18 +20,22 @@ main {
   align-items: center;
   min-height: 100vh;
   gap: 20px;
+  background-color: var(--primary-background-color);
+  color: var(--font-color);
 }
 
 .userNameSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   gap: 20px;
   width: 450px;
   height: 500px;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0px 0px 10px #101010;
+  background-color: var(--secondary-background-color);
 }
 
 .userNameDiv {
@@ -46,6 +55,7 @@ main {
   border-radius: 6px;
   padding: 15px 10px;
   transition: 0.4s;
+  background-color: var(--primary-color);
 }
 
 #creatToDoList:hover {
@@ -64,6 +74,7 @@ main {
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0px 0px 10px #101010;
+  background-color: var(--secondary-background-color);
 }
 
 .addToListDiv {
@@ -74,7 +85,7 @@ main {
 
 #addToListInput {
   border: 0;
-  border-bottom: solid #6f6f6f;
+  border-radius: 4px;
   width: 70%;
   height: 35px;
   padding-left: 5px;
@@ -87,6 +98,7 @@ main {
   width: 25%;
   padding: 10px 15px;
   transition: 0.4s;
+  background-color: var(--primary-color);
 }
 
 #addToListBtn:hover {
@@ -108,7 +120,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ccc;
+  background-color: var(--primary-color);
+  color: black;
   border-radius: 4px;
   padding: 10px;
 }
@@ -116,6 +129,14 @@ main {
 .taskInfos {
   display: flex;
   gap: 5px;
+  width: 85%;
+}
+
+.taskNameInput {
+  border: 0;
+  background-color: var(--primary-color);
+  color: black;
+  width: 100%;
 }
 
 .taskButtonsDiv {
@@ -123,8 +144,8 @@ main {
   gap: 5px;
 }
 
-#editTaskNameBtn,
-#deleteTaskBtn {
+.editTaskNameBtn,
+.deleteTaskBtn {
   cursor: pointer;
   background-color: transparent;
   border: 0;

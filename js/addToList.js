@@ -1,27 +1,38 @@
+import { editTaskName, removeTask } from "./taskButtons.js";
+
 export { addToList };
 
 function addToList() {
+  const addToListInput = document.getElementById("addToListInput");
   const divOfTasks = document.getElementById("tasks");
+  const taskNumber = document.querySelectorAll(".task").length + 1;
 
   const taskDiv = document.createElement("div");
   taskDiv.classList.add("task");
+  taskDiv.id = `task-${taskNumber}`;
 
   const taskInfosDiv = document.createElement("div");
   taskInfosDiv.classList.add("taskInfos");
 
   const completeInput = document.createElement("input");
   completeInput.type = "radio";
-  completeInput.id = "taskCompleted";
+  completeInput.id = `task-${taskNumber}-completed`;
 
-  const taskName = document.createElement("p");
-  taskName.id = "taskName";
-  taskName.innerText = document.getElementById("addToListInput").value;
+  const taskName = document.createElement("input");
+  taskName.classList.add("taskNameInput");
+  taskName.id = `taskName-${taskNumber}`;
+  taskName.value = addToListInput.value;
+  taskName.disabled = true;
 
   const taskButtonsDiv = document.createElement("div");
   taskButtonsDiv.classList.add("taskButtonsDiv");
+  taskButtonsDiv.id = `taskButtonsDiv-${taskNumber}`;
 
   const editTaskNameBtn = document.createElement("button");
-  editTaskNameBtn.id = "editTaskNameBtn";
+  editTaskNameBtn.classList.add("editTaskNameBtn");
+  editTaskNameBtn.id = `editTaskNameBtn-${taskNumber}`;
+
+  editTaskNameBtn.addEventListener("click", editTaskName);
 
   const editIconImg = document.createElement("img");
   editIconImg.src = "/img/editIcon.svg";
@@ -29,7 +40,10 @@ function addToList() {
   editIconImg.classList.add("icon");
 
   const deleteTaskBtn = document.createElement("button");
-  deleteTaskBtn.id = "deleteTaskBtn";
+  deleteTaskBtn.classList.add("deleteTaskBtn");
+  deleteTaskBtn.id = `deleteTaskBtn-${taskNumber}`;
+
+  deleteTaskBtn.addEventListener("click", removeTask);
 
   const trashCanImg = document.createElement("img");
   trashCanImg.src = "/img/trash-can-icon.svg";
@@ -42,4 +56,6 @@ function addToList() {
   taskButtonsDiv.append(editTaskNameBtn, deleteTaskBtn);
   taskDiv.append(taskInfosDiv, taskButtonsDiv);
   divOfTasks.appendChild(taskDiv);
+
+  addToListInput.value = "";
 }
