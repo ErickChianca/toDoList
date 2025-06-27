@@ -23,11 +23,17 @@
       <section id="toDoListSection" class="toDoListSection">
         <h1 id="ownersName"></h1>
         <div class="addToListDiv">
-          <input type="text" id="addToListInput" placeholder="Study Japanese" />
+          <input
+            type="text"
+            id="addToListInput"
+            placeholder="e.g. Practice a Chess Opening"
+          />
           <button id="addToListBtn">Add</button>
         </div>
-        <p id="tasksCompleted"></p>
-        <p id="tasksToComplete"></p>
+        <div>
+          <p id="tasksQuantity">You have 0 task(s)</p>
+          <p id="tasksToComplete">0 task(s) to complete</p>
+        </div>
         <div id="tasks"></div>
       </section>
     </main>

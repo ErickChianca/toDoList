@@ -8,10 +8,10 @@
 }
 
 :root {
-  --primary-background-color: #003153;
-  --secondary-background-color: #012d4d;
+  --primary-background-color: #2a3439;
+  --secondary-background-color: #010b13;
   --font-color: #fbf5f3;
-  --primary-color: #fbff12;
+  --primary-color: #fbf5f3;
 }
 
 main {
@@ -132,6 +132,10 @@ main {
   width: 85%;
 }
 
+.taskCompletedInput {
+  width: 20px;
+}
+
 .taskNameInput {
   border: 0;
   background-color: var(--primary-color);
@@ -152,9 +156,9 @@ main {
   transition: 0.2s;
 }
 
-#editTaskNameBtn:hover,
-#deleteTaskBtn:hover {
-  filter: brightness(0.8);
+.editTaskNameBtn:hover,
+.deleteTaskBtn:hover {
+  filter: brightness(0.7);
 }
 
 .icon {

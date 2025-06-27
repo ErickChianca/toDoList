@@ -1,4 +1,4 @@
-import { editTaskName, removeTask } from "./taskButtons.js";
+import { checked, editTaskName, removeTask } from "./taskButtons.js";
 
 export { addToList };
 
@@ -6,6 +6,12 @@ function addToList() {
   const addToListInput = document.getElementById("addToListInput");
   const divOfTasks = document.getElementById("tasks");
   const taskNumber = document.querySelectorAll(".task").length + 1;
+
+  localStorage.setItem(`task-${taskNumber}`, addToListInput.value);
+
+  document.getElementById(
+    "tasksQuantity"
+  ).innerText = `You have ${taskNumber} task(s)`;
 
   const taskDiv = document.createElement("div");
   taskDiv.classList.add("task");
@@ -15,8 +21,11 @@ function addToList() {
   taskInfosDiv.classList.add("taskInfos");
 
   const completeInput = document.createElement("input");
-  completeInput.type = "radio";
+  completeInput.type = "checkbox";
+  completeInput.classList.add("taskCompletedInput");
   completeInput.id = `task-${taskNumber}-completed`;
+
+  completeInput.addEventListener("click", checked);
 
   const taskName = document.createElement("input");
   taskName.classList.add("taskNameInput");
@@ -58,4 +67,6 @@ function addToList() {
   divOfTasks.appendChild(taskDiv);
 
   addToListInput.value = "";
+
+  checked();
 }
