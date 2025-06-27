@@ -41,7 +41,7 @@ export default function existingTask() {
     editTaskNameBtn.addEventListener("click", editTaskName);
 
     const editIconImg = document.createElement("img");
-    editIconImg.src = "/img/editIcon.svg";
+    editIconImg.src = "./img/editIcon.svg";
     editIconImg.alt = "Edit name";
     editIconImg.classList.add("icon");
 
@@ -52,7 +52,7 @@ export default function existingTask() {
     deleteTaskBtn.addEventListener("click", removeTask);
 
     const trashCanImg = document.createElement("img");
-    trashCanImg.src = "/img/trash-can-icon.svg";
+    trashCanImg.src = "./img/trash-can-icon.svg";
     trashCanImg.alt = "Delete";
     trashCanImg.classList.add("icon");
 

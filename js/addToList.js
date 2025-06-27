@@ -44,7 +44,7 @@ function addToList() {
   editTaskNameBtn.addEventListener("click", editTaskName);
 
   const editIconImg = document.createElement("img");
-  editIconImg.src = "/img/editIcon.svg";
+  editIconImg.src = "./img/editIcon.svg";
   editIconImg.alt = "Edit name";
   editIconImg.classList.add("icon");
 
@@ -55,7 +55,7 @@ function addToList() {
   deleteTaskBtn.addEventListener("click", removeTask);
 
   const trashCanImg = document.createElement("img");
-  trashCanImg.src = "/img/trash-can-icon.svg";
+  trashCanImg.src = "./img/trash-can-icon.svg";
   trashCanImg.alt = "Delete";
   trashCanImg.classList.add("icon");
 

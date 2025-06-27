@@ -28,7 +28,7 @@ function hasUsername() {
   if (username !== "") {
     userNameSection.classList.add("disabled");
     toDoListSection.classList.remove("disabled");
-    ownersName.innerText = `${username}'s TO-DO LIST`;
+    ownersName.innerText = `${username}'s To-Do List`;
     return;
   }
 }
