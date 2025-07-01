@@ -1,4 +1,4 @@
-export { removeTask, editTaskName, checked };
+export { removeTask, editTaskName, tasksToComplete, checked };
 
 function removeTask(ev) {
   const elementParent = ev.currentTarget.parentElement;
@@ -76,7 +76,7 @@ function editTaskName(ev) {
   changeInputVisibility(taskToEdit, idNumber);
 }
 
-function checked() {
+function tasksToComplete() {
   const taskNumber = document.querySelectorAll(".task").length + 1;
   const completedTasks = document.querySelectorAll(
     ".taskCompletedInput:checked"
@@ -102,4 +102,8 @@ function changeInputVisibility(taskToEdit, idNumber) {
 function confirmEditedName(taskToEdit, idNumber) {
   console.log(taskToEdit, idNumber);
   localStorage.setItem(`task-${idNumber}`, taskToEdit.value);
+}
+
+function checked() {
+  
 }

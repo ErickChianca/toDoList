@@ -1,4 +1,4 @@
-import { checked, editTaskName, removeTask } from "./taskButtons.js";
+import { checked, editTaskName, removeTask, tasksToComplete } from "./taskButtons.js";
 
 export default function existingTask() {
   for (let i = 0; i < localStorage.length - 1; i++) {
@@ -22,7 +22,7 @@ export default function existingTask() {
     completeInput.classList.add("taskCompletedInput");
     completeInput.id = `task-${taskNumber}-completed`;
 
-    completeInput.addEventListener("click", checked);
+    completeInput.addEventListener("click", tasksToComplete);
 
     const taskName = document.createElement("input");
     taskName.classList.add("taskNameInput");
@@ -63,6 +63,6 @@ export default function existingTask() {
     taskDiv.append(taskInfosDiv, taskButtonsDiv);
     divOfTasks.appendChild(taskDiv);
 
-    checked();
+    tasksToComplete();
   }
 }
