@@ -17,7 +17,7 @@ function removeTask(ev) {
     } task(s)`;
 
     taskToRemove.remove();
-    checked();
+    tasksToComplete();
     return;
   }
   if (parentId.length > 17) {
@@ -32,7 +32,7 @@ function removeTask(ev) {
     } task(s)`;
 
     taskToRemove.remove();
-    checked();
+    tasksToComplete();
     return;
   }
 
@@ -44,7 +44,7 @@ function removeTask(ev) {
   localStorage.removeItem(`task-${idNumber}`);
   const taskToRemove = document.getElementById(`task-${idNumber}`);
   taskToRemove.remove();
-  checked();
+  tasksToComplete();
 }
 
 function editTaskName(ev) {
@@ -104,6 +104,4 @@ function confirmEditedName(taskToEdit, idNumber) {
   localStorage.setItem(`task-${idNumber}`, taskToEdit.value);
 }
 
-function checked() {
-  
-}
+function checked(ev) {}
