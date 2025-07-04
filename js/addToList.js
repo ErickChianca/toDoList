@@ -1,4 +1,9 @@
-import { checked, editTaskName, removeTask, tasksToComplete } from "./taskButtons.js";
+import {
+  checked,
+  editTaskName,
+  removeTask,
+  tasksToComplete,
+} from "./taskButtons.js";
 
 export { addToList };
 
@@ -26,6 +31,7 @@ function addToList() {
   completeInput.id = `task-${taskNumber}-completed`;
 
   completeInput.addEventListener("click", tasksToComplete);
+  completeInput.addEventListener("click", checked);
 
   const taskName = document.createElement("input");
   taskName.classList.add("taskNameInput");

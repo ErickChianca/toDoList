@@ -104,6 +104,4 @@ function confirmEditedName(taskToEdit, idNumber) {
   localStorage.setItem(`task-${idNumber}`, taskToEdit.value);
 }
 
-function checked() {
-  
-}
+function checked(ev) {}
